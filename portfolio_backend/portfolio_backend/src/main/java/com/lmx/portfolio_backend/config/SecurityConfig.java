@@ -9,12 +9,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
-
 
 @Configuration
 @EnableMethodSecurity
@@ -43,6 +43,7 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/login").permitAll()
+
                         .requestMatchers(
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**"
@@ -56,8 +57,8 @@ public class SecurityConfig {
                                 "/api/experiences",
                                 "/api/resumes",
                                 "/api/feedback/public"
-
                         ).permitAll()
+
                         .requestMatchers(
                                 org.springframework.http.HttpMethod.GET,
                                 "/uploads/**"
@@ -79,6 +80,7 @@ public class SecurityConfig {
 
         return http.build();
     }
+
     @Bean
     public org.springframework.web.cors.CorsConfigurationSource corsConfigurationSource() {
 
@@ -88,8 +90,9 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(
                 java.util.List.of(
                         "http://localhost:5174",
-//                        "http://localhost:5173",
-                        "http://localhost:5175"
+                        "http://localhost:5175",
+                        "https://portfolio-frontend-gamma-taupe.vercel.app",
+                        "https://portfolio-admin-mauve-mu.vercel.app"
                 )
         );
 
@@ -114,6 +117,7 @@ public class SecurityConfig {
 
         return source;
     }
+
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
