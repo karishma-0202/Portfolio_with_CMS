@@ -1,0 +1,69 @@
+# ================================
+# Java / Spring Boot
+# ================================
+
+**/target/
+**/build/
+*.class
+*.jar
+*.war
+*.log
+
+# Spring Boot local configuration
+**/application-local.properties
+**/application-local.yml
+**/application-local.yaml
+# Local application configuration with secrets
+**/src/main/resources/application.properties
+
+# ================================
+# Node / React / Vite
+# ================================
+
+**/node_modules/
+**/dist/
+**/.vite/
+
+# ================================
+# Environment / Secrets
+# ================================
+
+.env
+.env.*
+!.env.example
+
+# ================================
+# Uploaded files
+# ================================
+
+uploads/
+**/uploads/
+
+# ================================
+# IDE
+# ================================
+
+.idea/
+.vscode/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# ================================
+# OS files
+# ================================
+
+.DS_Store
+Thumbs.db
+
+# ================================
+# Temporary files
+# ================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
