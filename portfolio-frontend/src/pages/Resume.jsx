@@ -56,7 +56,8 @@ function Resume() {
   const resumeUrl = resume?.fileUrl
     ? resume.fileUrl.startsWith('http')
       ? resume.fileUrl
-      : `http://localhost:8080${resume.fileUrl}`
+      //: `http://localhost:8080${resume.fileUrl}`
+      : `https://portfoliowithcms-production.up.railway.app${resume.fileUrl}`
     : null
 
   const openResume = async () => {

@@ -181,7 +181,8 @@ function Resume() {
       return fileUrl
     }
 
-    return `http://localhost:8080${fileUrl}`
+   // return `http://localhost:8080${fileUrl}`
+      return `https://portfoliowithcms-production.up.railway.app${fileUrl}`
   }
 
   return (

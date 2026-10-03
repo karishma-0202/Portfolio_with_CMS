@@ -86,7 +86,8 @@ function Home() {
   const profileImageUrl = about?.profileImage
     ? about.profileImage.startsWith('http')
       ? about.profileImage
-      : `http://localhost:8080${about.profileImage}`
+      //: `http://localhost:8080${about.profileImage}`
+      : `https://portfoliowithcms-production.up.railway.app${about.profileImage}`
     : null
 
   return (
